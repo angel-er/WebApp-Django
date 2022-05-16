@@ -3,8 +3,13 @@
 {% load static %}
 
 {% block content %}
-
-    <div>
-        <p></p>
-    </div>
+    {% for servicio in servicios %}
+        <div>
+            <p>
+                <h2 style="color: #fff;">{{servicio.titulo}}</h2>
+                <p style="color: #fff;">{{servicio.contenido}}</p>
+                <p><img src="{{servicio.imagen.url}}"/></p>
+            </p>
+        </div>
+    {% endfor %}
 {% endblock %}
