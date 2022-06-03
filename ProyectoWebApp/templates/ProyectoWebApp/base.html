@@ -36,10 +36,10 @@
           
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
-              <li class="nav-item {% if request.path == '' %}active{% endif %} px-lg-4">
+              <li class="nav-item {% if request.path == '/' %}active{% endif %} px-lg-4">
                 <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Inicio</a>
               </li>
-              <li class="nav-item {% if '/servicios/' in request.path %}active{% endif %} px-lg-4">
+              <li class="nav-item {% if request.path == '/servicios/' %}active{% endif %} px-lg-4">
                 <a class="nav-link text-uppercase text-expanded" href="{% url 'Servicios' %}">Servicios</a>
               </li>
               <li class="nav-item {% if '/tienda/' in request.path %}active{% endif %} px-lg-4">
@@ -48,7 +48,7 @@
               <li class="nav-item {% if '/contacto/' in request.path %}active{% endif %} px-lg-4">
                 <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto' %}">Contacto</a>
               </li>
-              <li class="nav-item {% if request.path == '/blog/' %}active{% endif %} px-lg-4">
+              <li class="nav-item {% if request.path|slice:':6' == '/blog/' %}active{% endif %} px-lg-4">
                 <a class="nav-link text-uppercase text-expanded" href="{% url 'Blog' %}">Blog</a>
               </li>
             </ul>
