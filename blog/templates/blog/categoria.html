@@ -33,12 +33,8 @@
 
     <section>
         <div style="width: 75%; color: #fff; text-align: center; margin: auto;">
-            Categorías: 
-            {% for post in posts %}
-                {% for categoria in post.categorias.all %}
-                    {{categoria.nombre}} &nbsp;&nbsp;&nbsp;
-                {% endfor %}
-            {% endfor %}
+            Categorías: {{categoria.nombre}}
+
         </div>
     </section>
 
